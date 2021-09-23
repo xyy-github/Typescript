@@ -89,3 +89,23 @@
 3. ts-node 插件
    `(sudo) npm i ts-node` 安装插件
    运行`ts-node index.ts`，直接运行.ts 文件，并且也不会编译出来.js 文件
+
+# 六：编译配置
+
+运行：tsc -init 生成 tsconfig.json 文件
+` 
+ {
+   "compilerOptions": {
+      // include: ["*.ts"] // 执行目录下所有的ts文件转换成js文件
+      // include: ["index.ts"] // 只将项目下index.ts文件转换为js文件
+      // files: ["index.ts"] // 跟include一样，只执行当前数组值里面的文件,当前files必须写相对路径
+      // exclude: ["index.ts"] // exclude就是除了index.ts不执行，其它都执行
+    
+    compilerOptions: {
+        removeComments: true, // 去掉编译完js文件的注释
+        outDir: "./build", // 最终输出的js文件目录
+        rootDir: "./src", // ts入口文件查找
+    }
+
+ }
+`
